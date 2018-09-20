@@ -17,10 +17,10 @@ SELECT
 	[ClientName]
 	,[Month]
 	,SUM([SubTotal]) OVER (
-		PARTITION BY 
-			[ClientName] 
+		PARTITION BY [ClientName] 
 		ORDER BY [Month] 
-		ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) as [Cumulative Sum] 
+		ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW
+	) as [Cumulative Sum] 
 FROM 
 	SubTotalTable
 ORDER BY 
